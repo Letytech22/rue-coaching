@@ -12,21 +12,97 @@ const RUTH_IMG =
   "https://cdn.beacons.ai/user_content/JxroMmCoXLaA9O3WtmUClyUgrd82/referenced_images/d752c8fb-7e24-49cf-b30d-fb673c054bfd__website__92d33d80-fb58-4be1-bfc7-957b452329df__content__homepage__a3f7e9c4-4c46-4850-9c3a-0aac4fdcbbe2__819dfc35-6bc6-4170-9dfd-85b1136cf80a.webp?t=1761046154229";
 const BOOK = "https://ruecoaching.com/shop/free_discovery_call";
 
+
+
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "RueCoaching",
+  url: "https://ruecoaching.com/",
+  description:
+    "A youth development initiative focused on career exploration, mentorship, coaching and capacity building.",
+  sameAs: [
+    "https://www.linkedin.com/in/ruthmwongelimuthoka/",
+    "https://instagram.com/ruthmwongeli",
+    "https://www.facebook.com/ruth.mwongeli.1",
+  ],
+};
+
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RueCoaching — Helping young people discover, dream and do" },
-      { name: "description", content: "Career exploration, mentorship and capacity building for young people, founded by Dr. Ruth Mwongeli." },
-      { property: "og:title", content: "RueCoaching — Helping young people discover, dream and do" },
-      { property: "og:description", content: "Career exploration, mentorship and coaching so young people don't figure out their future alone." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: RUTH_IMG },
-      { name: "twitter:image", content: RUTH_IMG },
+      {
+        title: "RueCoaching | Career Guidance & Mentorship for Young People",
+      },
+      {
+        name: "description",
+        content:
+          "RueCoaching helps young people explore careers, discover their strengths, build confidence and plan their future through mentorship, private coaching and workshops.",
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        property: "og:title",
+        content: "RueCoaching | Discover, Dream and Do",
+      },
+      {
+        property: "og:description",
+        content:
+          "Career exploration, mentorship, private coaching and workshops to help young people make confident decisions about their future.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://ruecoaching.com/",
+      },
+      {
+        property: "og:image",
+        content: RUTH_IMG,
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: "RueCoaching | Discover, Dream and Do",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Career guidance, mentorship and coaching for young people.",
+      },
+      {
+        name: "twitter:image",
+        content: RUTH_IMG,
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://ruecoaching.com/",
+      },
+    ],
+
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationSchema),
+      },
     ],
   }),
   component: Index,
 });
+ 
+
 
 const socials = [
   { href: "https://www.linkedin.com/in/ruthmwongelimuthoka/", Icon: Linkedin, label: "LinkedIn" },
