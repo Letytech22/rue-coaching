@@ -73,7 +73,7 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "twitter:title",
-        content: "RueCoaching | Discover, Dream and Do",
+        content: "RueCoaching | Mentorship and coaching for young people",
       },
       {
         name: "twitter:description",
