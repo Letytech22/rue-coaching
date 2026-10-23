@@ -2,7 +2,9 @@
 @source "../src";
 @import "tw-animate-css";
 
+
 @custom-variant dark (&:is(.dark *));
+
 
 /*
  * Design system definition.
@@ -133,4 +135,2306 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+/* HERO BACKGROUND */
+
+.rue-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("/ruecoaching image.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #ae907a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 5% 100px;
+}
+
+.rue-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+/* Social menu container */
+
+.rue-social-menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  left: auto;
+  z-index: 30;
+}
+
+/* Desktop social icons */
+
+.rue-socials {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hide hamburger on desktop */
+
+.rue-menu-toggle {
+  display: none;
+}
+.rue-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffffff;
+  color: #ae907a;
+
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.rue-socials a:hover {
+  background-color: #f1e7df;
+  transform: translateY(-2px);
+}
+
+.rue-socials svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 2;
+}
+
+/* HERO CONTENT */
+
+
+.rue-hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 320px auto 0;
+
+  text-align: center;
+  z-index: 2;
+}
+
+/* MAIN HEADING */
+
+.rue-hero-content h1 {
+  margin: 0 auto;
+  max-width: 1100px;
+
+  font-family:"Poppins", serif;
+  font-size: clamp(4rem, 6vw, 6.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #fff;
+}
+
+/* DESCRIPTION */
+
+.rue-hero-content p {
+  max-width: 1100px;
+  margin: 20px auto 0;
+
+  font-family:"Poppins", serif;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #fff;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-hero-content {
+    margin-top: 190px;
+  }
+
+  .rue-hero-content h1 {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-hero {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    padding: 0 20px 50px;
+    box-sizing: border-box;
+
+    background-image: url("/ruecoaching image.png");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #ae907a;
+
+    overflow: hidden;
+  }
+
+
+  .rue-hero-content {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 260px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+}
+
+.rue-hero-content h1 {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+
+  font-size: clamp(26px, 7vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.rue-hero-content p {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto 0;
+
+  font-size: 16px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+}
+
+/* ==========================================
+   MOBILE SOCIAL MENU
+   Only applies to screens 640px and below
+========================================== */
+
+@media (max-width: 640px) {
+
+  /* Position toggle at top right */
+
+  .rue-hero .rue-social-menu {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: auto;
+    width: auto;
+    z-index: 30;
+  }
+
+  /* Show hamburger button */
+
+  .rue-hero .rue-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  /* Hide social icons initially */
+
+  .rue-hero .rue-social-menu .rue-socials {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: auto;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    background: rgba(70, 52, 40, 0.94);
+    border-radius: 8px;
+  }
+
+  /* Display icons when hamburger is clicked */
+
+  .rue-hero .rue-social-menu .rue-socials.rue-socials-open {
+    display: flex;
+  }
+
+}
+
+
+/* ===================================
+   WHAT IS RUECOACHING SECTION
+=================================== */
+
+.rue-about {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 30px 0 60px;
+}
+
+
+
+.rue-about-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+/* SECTION HEADING */
+
+.rue-about h2 {
+  margin: 0 0 42px;
+  text-align: center;
+
+  font-family:  "Poppins", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: #00483f;
+}
+
+/* PARAGRAPHS */
+
+.rue-about-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #00483f;
+}
+
+.rue-about-content p {
+  margin: 0 0 30px;
+}
+
+.rue-about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.rue-about-content strong {
+  font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-about {
+    padding: 45px 0 55px;
+  }
+
+  .rue-about-container {
+    padding: 0 35px;
+  }
+
+  .rue-about h2 {
+    font-size: 32px;
+  }
+
+  .rue-about-content {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-about {
+    padding: 45px 0 50px;
+  }
+
+  .rue-about-container {
+    padding: 0 20px;
+  }
+
+  .rue-about h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .rue-about-content {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .rue-about-content p {
+    margin-bottom: 22px;
+  }
+}
+
+
+
+
+/* ==========================================
+   WHY RUECOACHING SECTION
+========================================== */
+
+.rue-why {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+
+  background-color: #e9ddca;
+  background-image: url("/why-ruecoaching-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #00483f;
+}
+
+.rue-why-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+
+  padding: 26px 80px 55px;
+  box-sizing: border-box;
+}
+
+/* LEFT COLUMN */
+
+.rue-why-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 65px;
+}
+
+.rue-why-left h2 {
+  margin: 0;
+  font-family:  "Poppins", serif;
+  font-size: clamp(26px, 3.1vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-align: center;
+  color: #00483f;
+}
+
+/* RIGHT COLUMN */
+
+.rue-why-right {
+  padding-left: 0;
+}
+
+.rue-why-right h3 {
+  margin: 0 0 32px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #00483f;
+}
+
+.rue-why-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #00483f;
+}
+
+.rue-why-text p {
+  margin: 0 0 24px;
+}
+
+.rue-why-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-why-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 45px;
+  }
+
+  .rue-why-left {
+    padding-right: 0;
+  }
+
+  .rue-why-left h2 {
+    font-size: clamp(30px, 5vw, 40px);
+  }
+
+
+  .rue-why-text {
+    font-size: 17px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-why {
+    min-height: auto;
+    background-color: #e9ddca;
+  
+    background-image: linear-gradient(
+      165deg,
+      rgba(233, 221, 202, 0) 0%,
+      rgba(95, 83, 66, 0.3) 25%,
+      rgba(65, 58, 45, 0.55) 42%,
+      rgba(235, 213, 180, 0.15) 70%,
+      rgba(245, 232, 208, 0) 100%
+    ),
+    url("/why-ruecoaching-bg.jpg");
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .rue-why-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 55px 20px;
+  }
+
+  .rue-why-left {
+    padding-right: 0;
+  }
+
+  .rue-why-left h2 {
+    font-size: 36px;
+  }
+
+  .rue-why-right h3 {
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+
+  .rue-why-text {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .rue-why-text p {
+    margin-bottom: 25px;
+  }
+}
+
+
+
+/* ==========================================
+   THE GOAL SECTION
+========================================== */
+
+.rue-goal {
+  width: 100%;
+  background: #f3f8f6;
+  color: #00483f;
+  padding: 28px 0 34px;
+}
+
+.rue-goal-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+/* TOP AREA */
+
+.rue-goal-top h2 {
+  margin: 0;
+  font-family: "Poppins", serif;
+  font-size: clamp(72px, 8vw, 116px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #00483f;
+}
+
+.rue-goal-top p {
+  max-width: 1280px;
+  margin: 26px 0 0;
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  line-height: 1.1;
+  color: #00483f;
+}
+
+/* BOTTOM 3-COLUMN AREA */
+
+.rue-goal-bottom {
+  display: grid;
+  grid-template-columns: 28% 44% 28%;
+  align-items: stretch;
+  margin-top: 70px;
+}
+
+.rue-goal-col {
+  min-height: 300px;
+}
+
+.rue-goal-left,
+.rue-goal-right {
+  display: flex;
+  align-items: center;
+}
+
+.rue-goal-left {
+  justify-content: flex-start;
+  padding: 0 36px 0 36px;
+}
+
+.rue-goal-right {
+  justify-content: flex-start;
+  padding: 0 36px 0 100px;
+}
+
+.rue-goal-center {
+  padding: 22px 80px 22px 80px;
+  border-left: 1.5px solid rgba(0, 72, 63, 0.55);
+  border-right: 1.5px solid rgba(0, 72, 63, 0.55);
+}
+
+.rue-goal-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #00483f;
+  text-decoration: none;
+}
+
+.rue-goal-link:hover {
+  text-decoration: underline;
+}
+
+.rue-goal-center h3 {
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", serif;
+  font-size: clamp(38px, 4.6vw, 54px);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: #00483f;
+}
+
+.rue-goal-center p {
+  max-width: 540px;
+  margin: 26px auto 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #00483f;
+}
+
+/* BOTTOM RULE */
+
+.rue-goal-rule {
+  width: 100%;
+  height: 11px;
+  background: #005248;
+  margin-top: 74px;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-goal-container {
+    padding: 0 50px;
+  }
+
+  .rue-goal-top h2 {
+    font-size: clamp(58px, 8vw, 86px);
+  }
+
+  .rue-goal-top p {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .rue-goal-bottom {
+    grid-template-columns: 1fr;
+    margin-top: 45px;
+    gap: 0;
+  }
+  
+  .rue-goal-col {
+    min-height: auto;
+  }
+  
+  .rue-goal-left,
+  .rue-goal-right {
+    justify-content: center;
+    padding: 25px 0;
+  }
+  
+  .rue-goal-center {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #00483f;
+    border-bottom: 1px solid #00483f;
+    padding: 35px 20px;
+  }
+
+ 
+
+  .rue-goal-center h3 {
+    font-size: clamp(40px, 4.5vw, 58px);
+  }
+
+  .rue-goal-center p {
+    font-size: 17px;
+  }
+
+  .rue-goal-left {
+    padding-left: 16px;
+    padding-right: 20px;
+  }
+
+  .rue-goal-right {
+    padding-left: 36px;
+    padding-right: 16px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-goal {
+    padding: 40px 0 28px;
+  }
+
+  .rue-goal-container {
+    padding: 0 20px;
+  }
+
+  .rue-goal-top h2 {
+    font-size: 56px;
+    line-height: 0.98;
+  }
+
+  .rue-goal-top p {
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .rue-goal-bottom {
+    grid-template-columns: 1fr;
+    margin-top: 45px;
+  }
+
+  .rue-goal-col {
+    min-height: auto;
+  }
+
+  .rue-goal-left,
+  .rue-goal-right {
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+
+  .rue-goal-center {
+    border-left: none;
+    border-right: none;
+    border-top: 1.5px solid rgba(0, 72, 63, 0.55);
+    border-bottom: 1.5px solid rgba(0, 72, 63, 0.55);
+    padding: 30px 0;
+  }
+
+  .rue-goal-center h3 {
+    font-size: 44px;
+  }
+
+  .rue-goal-center p {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .rue-goal-rule {
+    height: 8px;
+    margin-top: 35px;
+  }
+}
+
+
+/* ==========================================
+   GROUP WORKSHOPS SECTION
+========================================== */
+
+.rue-workshops {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 0;
+}
+
+.rue-workshops-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+
+/* LARGE HEADING */
+
+.rue-workshops h2 {
+  margin: 0;
+
+  font-family: "Poppins", serif;
+  font-size: clamp(55px, 7.5vw, 120px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+
+  color: #00483f;
+  text-align: center;
+}
+
+/* DESCRIPTION */
+
+.rue-workshops p {
+  max-width: 1450px;
+  margin: 35px auto 0;
+
+  font-family:"Poppins", serif;
+  font-size: clamp(16px, 1.6vw, 26px);
+  font-weight: 400;
+  line-height: 1.15;
+
+  color: #00483f;
+  text-align: center;
+}
+
+/* ORANGE BUTTON */
+
+.rue-workshops-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.rue-workshops-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffad25;
+  color: #00483f;
+
+  padding: 13px 18px;
+  border-radius: 35px;
+
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+.rue-workshops-cta a:hover {
+  background-color: #f29d12;
+  transform: none;
+  box-shadow: none;
+}
+
+/* BOTTOM THIN DIVIDER */
+
+.rue-workshops-bottom-line {
+  width: 100%;
+  height: 1px;
+  background-color: #00483f;
+  margin-top: 60px;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-workshops-container {
+    padding: 0 50px;
+  }
+
+  .rue-workshops h2 {
+    font-size: clamp(60px, 8vw, 95px);
+  }
+
+  .rue-workshops p {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-workshops-container {
+    padding: 0 20px;
+  }
+
+  .rue-workshops-top-line {
+    height: 8px;
+    margin-bottom: 35px;
+  }
+
+  .rue-workshops h2 {
+    font-size: clamp(44px, 11vw, 65px);
+    line-height: 1.1;
+  }
+
+  .rue-workshops p {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .rue-workshops-cta {
+    margin-top: 30px;
+  }
+
+  .rue-workshops-cta a {
+    font-size: 18px;
+    padding: 14px 22px;
+  }
+
+  .rue-workshops-bottom-line {
+    margin-top: 45px;
+  }
+}
+
+
+
+/* ==========================================
+   MEET RUTH SECTION
+========================================== */
+
+.rue-meet {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 0 0 60px;
+}
+
+.rue-meet-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+/* TOP HORIZONTAL DIVIDER */
+
+.rue-meet-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #00483f;
+  margin-bottom: 70px;
+}
+
+/* TWO-COLUMN LAYOUT */
+
+.rue-meet-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 100px;
+  align-items: start;
+}
+
+/* LEFT COLUMN */
+
+.rue-meet-content h2 {
+  margin: 20px 0 8px;
+
+  font-family:"Poppins", serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+
+  color: #00483f;
+}
+
+/* BIOGRAPHY TEXT */
+
+.rue-meet-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.48;
+  color: #00483f;
+}
+
+.rue-meet-text p {
+  margin: 0 0 24px;
+}
+
+.rue-meet-text .rue-meet-intro {
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 26px;
+}
+
+.rue-meet-text .rue-meet-bold {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* RIGHT COLUMN IMAGE */
+
+.rue-meet-image {
+  width: 100%;
+}
+
+.rue-meet-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-meet-container {
+    padding: 0 50px;
+  }
+
+  .rue-meet-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .rue-meet-image {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .rue-meet-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .rue-meet-content h2 {
+    font-size: 48px;
+  }
+
+  .rue-meet-text {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-meet {
+    padding-bottom: 45px;
+  }
+
+  .rue-meet-container {
+    padding: 0 20px;
+  }
+
+  .rue-meet-divider {
+    margin-bottom: 35px;
+  }
+
+  .rue-meet-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .rue-meet-content h2 {
+    font-size: 44px;
+    margin: 0 0 15px;
+  }
+
+  .rue-meet-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .rue-meet-text p {
+    margin-bottom: 20px;
+  }
+
+  .rue-meet-image {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+
+
+/* ==========================================
+   PRIVATE COACHING SECTION
+========================================== */
+
+.rue-private-coaching {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 48px 0 60px;
+}
+
+.rue-private-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+.rue-private-options {
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.rue-private-option {
+  min-height: auto;
+  padding: 0 20px 30px;
+}
+
+
+.rue-private-option p {
+  text-align: center;
+}
+
+.rue-private-link {
+  margin-top: 20px;
+  padding-top: 0;
+}
+
+/* TOP THICK DIVIDER */
+
+.rue-private-top-line {
+  width: 100%;
+  height: 10px;
+  background-color: #00483f;
+  margin-bottom: 25px;
+}
+
+/* MAIN HEADING */
+
+.rue-private-intro {
+  text-align: center;
+}
+
+.rue-private-intro h2 {
+  margin: 0;
+
+  font-family: "Poppins", serif;
+  font-size: clamp(65px, 6.5vw, 105px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+
+  color: #00483f;
+}
+
+/* MAIN DESCRIPTION */
+
+.rue-private-intro p {
+  max-width: 1200px;
+  margin: 24px auto 0;
+
+  font-family:"Poppins", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: #00483f;
+}
+
+/* MIDDLE THIN DIVIDER */
+
+.rue-private-divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: #00483f;
+  margin: 45px 0;
+}
+
+/* OPTIONS HEADING */
+
+.rue-private-options-heading {
+  margin: 0;
+  text-align: center;
+
+  font-family: "Poppins", serif;
+  font-size: clamp(40px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  color: #00483f;
+}
+
+/* THREE COLUMN LAYOUT */
+
+.rue-private-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-top: 75px;
+  width: 100%;
+}
+
+/* INDIVIDUAL OPTION */
+
+.rue-private-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  min-height: 180px;
+  padding: 0 48px;
+  text-align: center;
+}
+
+/* VERTICAL DIVIDERS */
+
+.rue-private-option:not(:last-child) {
+  border-right: 1.5px solid #00483f;
+}
+
+/* OPTION TITLE */
+
+.rue-private-option h4 {
+  margin: 0 0 22px;
+
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  color: #00483f;
+}
+
+/* OPTION DESCRIPTION */
+
+.rue-private-option p {
+  width: 100%;
+  max-width: 330px;
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+
+  text-align: left;
+  color: #00483f;
+}
+
+/* LEARN MORE LINK */
+
+.rue-private-link {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 25px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #00483f;
+  text-decoration: none;
+}
+
+.rue-private-link:hover {
+  text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-private-container {
+    padding: 0 45px;
+  }
+
+  .rue-private-intro h2 {
+    font-size: 70px;
+  }
+
+  .rue-private-intro p {
+    font-size: 20px;
+  }
+
+  .rue-private-options-heading {
+    font-size: 45px;
+  }
+
+  .rue-private-option {
+    padding: 0 25px;
+  }
+
+  .rue-private-option h4 {
+    font-size: 23px;
+  }
+
+  .rue-private-option p {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-private-coaching {
+    padding: 35px 0 50px;
+  }
+
+  .rue-private-container {
+    padding: 0 20px;
+  }
+
+  .rue-private-top-line {
+    height: 7px;
+    margin-bottom: 30px;
+  }
+
+  .rue-private-intro h2 {
+    font-size: clamp(45px, 10vw, 65px);
+    line-height: 1.1;
+  }
+
+  .rue-private-intro p {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .rue-private-divider {
+    margin: 40px 0;
+  }
+
+  .rue-private-options-heading {
+    font-size: 36px;
+  }
+
+  .rue-private-options {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 45px;
+  }
+
+  .rue-private-option {
+    min-height: auto;
+    padding: 0 10px 30px;
+  }
+
+  .rue-private-option:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #00483f;
+  }
+
+  .rue-private-option h4 {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+
+  .rue-private-option p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .rue-private-link {
+    margin-top: 15px;
+    padding-top: 0;
+  }
+}
+
+
+
+
+/* ==========================================
+   KEEP GOING SECTION
+========================================== */
+
+.rue-keep-going {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-color: #e6dfd1;
+
+  /* Soft beige and grey blurred background */
+  background-image:
+    radial-gradient(
+      ellipse 70% 65% at 10% 100%,
+      rgba(221, 174, 119, 0.45) 0%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 85% 80% at 75% 0%,
+      rgba(142, 150, 144, 0.38) 0%,
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      #d9dcd5 0%,
+      #e7e3d8 50%,
+      #ead4b4 100%
+    );
+
+  color: #00483f;
+  padding: 28px 0 32px;
+}
+
+.rue-keep-going-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+/* CENTERED HEADING */
+
+.rue-keep-going h2 {
+  margin: 0 0 30px;
+
+  font-family: "Poppins", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+
+  color: #00483f;
+}
+
+/* DESCRIPTION */
+
+.rue-keep-going-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #00483f;
+}
+
+.rue-keep-going-content p {
+  margin: 0 0 28px;
+}
+
+.rue-keep-going-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* SEE MORE LINK */
+
+.rue-keep-going-link {
+  display: block;
+  width: fit-content;
+  margin: 32px auto 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #00483f;
+  text-decoration: none;
+}
+
+.rue-keep-going-link:hover {
+  text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-keep-going-container {
+    padding: 0 50px;
+  }
+
+  .rue-keep-going-content {
+    font-size: 18px;
+  }
+
+  .rue-keep-going h2 {
+    font-size: 32px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-keep-going {
+    padding: 35px 0 40px;
+  }
+
+  .rue-keep-going-container {
+    padding: 0 20px;
+  }
+
+  .rue-keep-going h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  .rue-keep-going-content {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .rue-keep-going-content p {
+    margin-bottom: 22px;
+  }
+
+  .rue-keep-going-link {
+    margin-top: 28px;
+    font-size: 18px;
+  }
+}
+
+/* FIRST PARAGRAPH */
+.rue-keep-going-content p:first-child {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* SECOND PARAGRAPH */
+.rue-keep-going-content p:nth-child(2) {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .rue-keep-going-content p:first-child {
+    font-size: 17px;
+  }
+
+  .rue-keep-going-content p:nth-child(2) {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+/* ==========================================
+   NOT SURE WHERE TO START SECTION
+========================================== */
+
+.rue-not-sure {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 28px 0 34px;
+}
+
+.rue-not-sure-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+.rue-not-sure h2 {
+  margin: 0;
+  text-align: center;
+
+  font-family:"Poppins", serif;
+  font-size: clamp(40px, 4vw, 70px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+
+  color: #00483f;
+}
+
+.rue-not-sure-text {
+  margin-top: 42px;
+}
+
+.rue-not-sure-text p {
+  margin: 0 0 28px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #00483f;
+}
+
+.rue-not-sure-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .rue-not-sure-container {
+    padding: 0 50px;
+  }
+
+  .rue-not-sure h2 {
+    font-size: clamp(52px, 7vw, 76px);
+  }
+
+  .rue-not-sure-text {
+    margin-top: 32px;
+  }
+
+  .rue-not-sure-text p {
+    font-size: 17px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .rue-not-sure {
+    padding: 34px 0 38px;
+  }
+
+  .rue-not-sure-container {
+    padding: 0 20px;
+  }
+
+  .rue-not-sure h2 {
+    font-size: clamp(42px, 11vw, 58px);
+    line-height: 1.08;
+  }
+
+  .rue-not-sure-text {
+    margin-top: 26px;
+  }
+
+  .rue-not-sure-text p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+}
+
+
+
+
+
+
+/* ==========================================
+   CONTACT US SECTION
+========================================== */
+
+.rue-contact {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: #b79984;
+  background-image: url("/ruecoaching background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 72px 0 64px;
+  color: #ffffff;
+}
+
+.rue-contact-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(45, 30, 20, 0.32);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.rue-contact-container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.rue-contact h2 {
+  margin: 0;
+  font-family:"Poppins", serif;
+  font-size: clamp(44px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.rue-contact-subtitle {
+  margin: 26px 0 0;
+  font-family: "Poppins", serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.rue-contact-form {
+  margin-top: 52px;
+}
+
+.rue-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.rue-contact-grid input {
+  width: 100%;
+  height: 62px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 12px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.92);
+  color: #7c7c7c;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.rue-contact-grid input::placeholder {
+  color: #9b9b9b;
+}
+
+.rue-contact-submit {
+  margin-top: 14px;
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background-color: #f6b12a;
+  color: #00483f;
+
+  font-family:"Poppins", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+
+  transition: background-color 0.2s ease;
+}
+
+.rue-contact-submit:hover {
+  background-color: #efa51a;
+}
+
+.rue-contact-terms {
+  display: inline-block;
+  margin-top: 18px;
+
+  color: #ffffff;
+  text-decoration: underline;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.rue-contact-terms:hover {
+  opacity: 0.8;
+}
+
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .rue-contact-container {
+    padding: 0 50px;
+  }
+
+  .rue-contact-grid {
+    max-width: 900px;
+  }
+
+  .rue-contact-grid input {
+    height: 66px;
+    font-size: 17px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .rue-contact {
+    padding: 56px 0 50px;
+  }
+
+  .rue-contact-container {
+    padding: 0 20px;
+  }
+
+  .rue-contact h2 {
+    font-size: clamp(44px, 11vw, 60px);
+  }
+
+  .rue-contact-subtitle {
+    margin-top: 18px;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .rue-contact-form {
+    margin-top: 32px;
+  }
+
+  .rue-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .rue-contact-grid input {
+    height: 60px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .rue-contact-submit {
+    margin-top: 16px;
+    font-size: 18px;
+    padding: 13px 24px;
+  }
+
+  .rue-contact-terms {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================
+   RUECOACHING FOOTER
+========================================== */
+
+.rue-footer {
+  width: 100%;
+  background-color: #f3f8f6;
+  color: #00483f;
+  padding: 70px 20px 60px;
+}
+
+.rue-footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* SOCIAL MEDIA ICONS */
+
+.rue-footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.rue-footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 30px;
+
+  color: #00483f;
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.rue-footer-socials a:hover {
+  opacity: 0.7;
+}
+
+.rue-footer-socials svg {
+  width: 27px;
+  height: 27px;
+  stroke-width: 2.5;
+}
+
+/* COPYRIGHT */
+
+.rue-footer-copyright {
+  margin: 0 0 10px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #00483f;
+}
+
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .rue-footer {
+    padding: 60px 20px 50px;
+  }
+
+  .rue-footer-copyright {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-footer {
+    padding: 50px 20px 45px;
+  }
+
+  .rue-footer-socials {
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .rue-footer-socials svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .rue-footer-copyright {
+    font-size: 16px;
+  }
+}
+
+/* LETY TECH CONSULTANCY CREDIT */
+
+.rue-footer-credit {
+  margin: 8px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  color: #00483f;
+}
+
+.rue-footer-credit a {
+  color: #00483f;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.rue-footer-credit a:hover {
+  color: #d99a20;
+  text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-footer-credit {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+
+
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+  .rue-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .rue-hero-content p {
+    font-size: 15px;
+  }
+
+  .rue-workshops h2 {
+    font-size: 39px;
+  }
+
+  .rue-private-intro h2 {
+    font-size: 42px;
+  }
+
+  .rue-not-sure h2 {
+    font-size: 38px;
+  }
+
+  .rue-contact h2 {
+    font-size: 42px;
+  }
+}
+
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+.rue-scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  background-color: #00483f;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rue-scroll-top:hover {
+  background-color: #006b5c;
+  transform: translateY(-4px);
+}
+
+.rue-scroll-top:focus-visible {
+  outline: 3px solid #ffb52b;
+  outline-offset: 3px;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-scroll-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 15px;
+  }
+}
+
+
+
+/* ==========================================
+   RUECOACHING PRELOADER
+========================================== */
+
+.rue-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f3f8f6;
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.rue-preloader-hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* PRELOADER CONTENT */
+
+.rue-preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* RUECOACHING TITLE */
+
+.rue-preloader-title {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #00483f;
+  text-align: center;
+}
+
+/* CENTER THE FOUR DOTS */
+
+.rue-preloader-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.rue-preloader-dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rue-preloader-dots span {
+  width: 13px;
+  height: 13px;
+  background-color: #00483f;
+  border-radius: 50%;
+
+  animation: rue-loader-bounce 0.8s infinite ease-in-out;
+}
+
+.rue-preloader-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.rue-preloader-dots span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.rue-preloader-dots span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.rue-preloader-dots span:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+@keyframes rue-loader-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rue-preloader-dots span {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .rue-preloader-title {
+    font-size: 28px;
+  }
+
+  .rue-preloader-content {
+    gap: 20px;
+  }
+}
+
+
+
+/* ==========================================
+   RUECOACHING SCROLL ANIMATIONS
+========================================== */
+
+.rue-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform, opacity;
+}
+
+/* FADE UP */
+
+.rue-reveal-fade-up {
+  transform: translateY(35px);
+}
+
+/* FADE DOWN */
+
+.rue-reveal-fade-down {
+  transform: translateY(-35px);
+}
+
+/* SLIDE FROM LEFT */
+
+.rue-reveal-fade-left {
+  transform: translateX(-35px);
+}
+
+/* SLIDE FROM RIGHT */
+
+.rue-reveal-fade-right {
+  transform: translateX(35px);
+}
+
+/* ZOOM IN */
+
+.rue-reveal-zoom-in {
+  transform: scale(0.94);
+}
+
+/* VISIBLE STATE */
+
+.rue-reveal.rue-reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .rue-reveal-fade-up {
+    transform: translateY(20px);
+  }
+
+  .rue-reveal-fade-down {
+    transform: translateY(-20px);
+  }
+
+  .rue-reveal-fade-left {
+    transform: translateX(-15px);
+  }
+
+  .rue-reveal-fade-right {
+    transform: translateX(15px);
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .rue-reveal,
+  .rue-reveal.rue-reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* CONTACT FORM FEEDBACK */
+
+.rue-contact-success {
+  margin-top: 18px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rue-contact-error {
+  margin-top: 18px;
+  color: #ffe0d8;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rue-contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
