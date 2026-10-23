@@ -159,6 +159,16 @@ const [contactStatus, setContactStatus] = useState<
   "idle" | "success" | "error"
 >("idle");
 
+useEffect(() => {
+  if (contactStatus !== "success") return;
+
+  const timer = window.setTimeout(() => {
+    setContactStatus("idle");
+  }, 120000); // 2 minutes
+
+  return () => window.clearTimeout(timer);
+}, [contactStatus]);
+
 const handleContactSubmit = async (
   e: FormEvent<HTMLFormElement>
 ) => {
