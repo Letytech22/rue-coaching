@@ -48,12 +48,12 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "RueCoaching | Discover, Dream and Do",
+        content: "RueCoaching ",
       },
       {
         property: "og:description",
         content:
-          "Career exploration, mentorship, private coaching and workshops to help young people make confident decisions about their future.",
+          "Career exploration, mentorship and private coaching to help young people make confident decisions about their future.",
       },
       {
         property: "og:type",
