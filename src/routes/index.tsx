@@ -6,6 +6,17 @@ import { Linkedin, Instagram, Facebook, ArrowRight,ArrowUp, Bookmark,Menu,
 import Preloader from "../components/Preloader";
 import ScrollReveal from "../components/ScrollReveal";
 import { sendContactMessage } from "../lib/contact.functions";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import WhyRueCoaching from "@/components/WhyRueCoaching";
+import GoalSection from "@/components/GoalSection";
+import WorkshopsSection from "@/components/WorkshopsSection";
+import MeetRuthSection from "@/components/MeetRuthSection";
+import PrivateCoaching from "@/components/PrivateCoaching";
+import KeepGoingSection from "@/components/KeepGoingSection";
+import NotSureSection from "@/components/NotSureSection";
+import FooterSection from "@/components/FooterSection";
+import BackToTop from "@/components/BackToTop";
 
 
 const RUTH_IMG =
@@ -228,494 +239,33 @@ return (
   <main className="font-sans text-foreground">
     <Preloader />
 
-   
-   <header className="rue-hero">
- 
-{/* SOCIAL ICONS AND MOBILE MENU */}
-<div className="rue-social-menu">
+   {/* components section */}
+   <HeroSection/>
+<AboutSection/>
 
-{/* Hamburger button for mobile */}
-<button
-  type="button"
-  className="rue-menu-toggle"
-  onClick={() => setSocialMenuOpen(!socialMenuOpen)}
-  aria-label={socialMenuOpen ? "Close social menu" : "Open social menu"}
-  aria-expanded={socialMenuOpen}
-  aria-controls="rue-social-links"
->
-  {socialMenuOpen ? <X size={22} /> : <Menu size={22} />}
-</button>
+<WhyRueCoaching/>
 
-{/* Social media links */}
-<div
-  id="rue-social-links"
-  className={`rue-socials ${socialMenuOpen ? "rue-socials-open" : ""}`}
->
-  <a
-    href="https://www.linkedin.com/in/ruthmwongelimuthoka/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-  >
-    <Linkedin />
-  </a>
-
-  <a
-    href="#"
-    aria-label="More links"
-  >
-    <Bookmark />
-  </a>
-
-  <a
-    href="https://instagram.com/ruthmwongeli"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-  >
-    <Instagram />
-  </a>
-
-  <a
-    href="https://www.facebook.com/ruth.mwongeli.1"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-  >
-    <Facebook />
-  </a>
-</div>
-
-</div>
-
-
-  {/* Main hero content */}
-  <div className="rue-hero-content">
-    <h1>
-      Young people shouldn’t have to figure out their future alone.
-    </h1>
-
-    <p>
-      RueCoaching helps young people understand themselves,
-      explore what is possible, and build the confidence
-      and skills to make better choices about education,
-      career and the future.
-    </p>
-  </div>
-</header>
-<section className="rue-about">
-  <div className="rue-about-container">
-  <ScrollReveal animation="fade-up">
-
-    <h2>What is RueCoaching?</h2>
-    </ScrollReveal>
-
-    <div className="rue-about-content">
-      <p>
-        RueCoaching is EcoRue’s{" "}
-        <strong>youth development initiative</strong>{" "}
-        focused on{" "}
-        <strong>
-          career exploration, mentorship, and capacity building.
-        </strong>
-      </p>
-
-      <p>
-        We create space for young people to understand themselves,
-        explore different possibilities, ask better questions
-        about their future, and develop practical skills that
-        help them move forward with greater confidence and direction.
-      </p>
-
-      <p>
-        <strong>
-          The goal is not to tell a young person what career to choose.
-        </strong>
-        <br />
-        It is to help them discover more about who they are,
-        what they are capable of, and what possibilities
-        may be open to them.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section className="rue-why">
-  <div className="rue-why-container">
-
-    {/* Left column */}
-    <ScrollReveal animation="fade-left">
-
-    <div className="rue-why-left">
-      <h2>
-        Helping Kids
-        <br />
-        Discover, Dream,
-        <br />
-        and Do
-      </h2>
-    </div>
-    </ScrollReveal>
-
-    {/* Right column */}
-    <div className="rue-why-right">
-    <ScrollReveal animation="fade-up">
-      <h3>Why RueCoaching?</h3>
-      </ScrollReveal>
-
-      <div className="rue-why-text">
-        <p>
-          Young people are often expected to make important decisions
-          about school, university, and work before they have had
-          enough opportunity to explore.
-        </p>
-
-        <p>
-          Some have never spoken to someone working in the careers
-          they are considering.
-        </p>
-
-        <p>
-          Some know what subjects they enjoy but do not know where
-          those interests could lead.
-        </p>
-
-        <p>
-          Others simply need someone to help them slow down, ask
-          the right questions, and make sense of the options in
-          front of them.
-        </p>
-
-        <p>
-          RueCoaching exists to make that exploration easier.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section className="rue-goal">
-  <div className="rue-goal-container">
-    <div className="rue-goal-top">
-    <ScrollReveal animation="fade-up">
-      <h2>The Goal</h2>
-      </ScrollReveal>
-
-      <p>
-        We want to build a community where young people can access mentors,
-        professionals, practical learning experiences, career exposure and
-        opportunities to develop skills before important decisions have to be made.
-      </p>
-    </div>
-
-    <div className="rue-goal-bottom">
-      <div className="rue-goal-col rue-goal-left">
-        <a href="#" className="rue-goal-link">
-          → Become a MENTOR
-        </a>
-      </div>
-
-      <div className="rue-goal-col rue-goal-center">
-        <h3>
-          How to Get
-          <br />
-          Involved
-        </h3>
-
-        <p>
-          Over time, the goal is to make more of these opportunities freely
-          accessible through support from EcoRue, mentors, partners and people
-          who believe in helping young people discover how far they can go.
-        </p>
-      </div>
-
-      <div className="rue-goal-col rue-goal-right">
-        <a href="#" className="rue-goal-link">
-          → Support RueCoaching
-        </a>
-      </div>
-    </div>
-
-    <div className="rue-goal-rule" />
-  </div>
-</section>
-
+<GoalSection/>
       
 
-<section className="rue-workshops">
-  <div className="rue-workshops-container">
-
-    <div className="rue-workshops-top-line"></div>
-    <ScrollReveal animation="fade-up">
-
-    <h2>Group Workshops</h2>
-    </ScrollReveal>
-
-    <p>
-      Career exploration and capacity-building sessions for schools,
-      youth groups, community organizations and other groups.
-      Sessions can be adapted around self-discovery, career exploration,
-      STEM, future skills, confidence, goal-setting and learning
-      from people working in different professions.
-    </p>
-
-    <div className="rue-workshops-cta">
-      {/*
-      <Cta>Discuss a Workshop</Cta>
-      */}
-      <Cta href="#">Discuss a Workshop</Cta>
-
-    </div>
-
-    <div className="rue-workshops-bottom-line"></div>
-
-  </div>
-</section>
+<WorkshopsSection/>
 
       
-<section className="rue-meet">
-  <div className="rue-meet-container">
-
-    {/* Thin divider at the top */}
-    <div className="rue-meet-divider"></div>
-
-    <div className="rue-meet-grid">
-
-      {/* LEFT: Biography */}
-      <ScrollReveal animation="fade-up">
-      <div className="rue-meet-content">
-
-        <h2>Meet Ruth</h2>
-
-        <div className="rue-meet-text">
-          <p className="rue-meet-intro">
-            Hi, I’m Ruth, founder of EcoRue and RueCoaching,
-            and a mechanical engineer by training.
-          </p>
-
-          <p>
-            I grew up in Kenya, studied Mechanical Engineering,
-            and later moved to South Korea, where I completed
-            my PhD and spent more than eight years working in
-            advanced materials research.
-          </p>
-
-          <p>
-            My career has taken me through engineering, research,
-            AI-enabled materials discovery, sustainability,
-            entrepreneurship, and mentoring. Along the way,
-            I have published more than 20 peer-reviewed research
-            papers and co-authored three scientific books.
-          </p>
-
-          <p className="rue-meet-bold">
-            But one thing I have become increasingly interested
-            in is what happens before a young person chooses a career.
-          </p>
-
-          <p>
-            Many young people are expected to make important
-            decisions about school, university, and work before
-            they have had enough opportunity to understand
-            themselves, meet people doing different kinds of work,
-            or explore what is actually possible.
-          </p>
-
-          <p className="rue-meet-bold">
-            RueCoaching grew from wanting to create more room
-            for that exploration.
-          </p>
-
-          <p>
-            I want young people to be able to ask questions,
-            try things, meet mentors, discover what they are
-            good at, change their minds when necessary,
-            and gradually build a future that feels like their own.
-          </p>
-        </div>
-      </div>
-      </ScrollReveal>
-
-      {/* RIGHT: Ruth's original photo */}
-      <ScrollReveal animation="zoom-in" delay={150}>
-      <div className="rue-meet-image">
-        <img
-          src={RUTH_IMG}
-          alt="Dr. Ruth Muthoka, founder of RueCoaching"
-        />
-      </div>
-      </ScrollReveal>
-    </div>
-  </div>
-</section>
-
+<MeetRuthSection/>
 
     
 {/* PRIVATE COACHING SECTION */}
-<section className="rue-private-coaching">
-  <div className="rue-private-container">
-
-    {/* Thick top divider */}
-    <div className="rue-private-top-line" />
-
-    {/* Main heading */}
-    <div className="rue-private-intro">
-    <ScrollReveal animation="fade-up">
-      <h2>Private Coaching</h2>
-      </ScrollReveal>
-
-      <p>
-        Private coaching is available for young people and families
-        who would like more individualized guidance.
-      </p>
-    </div>
-
-    {/* Thin divider */}
-    <div className="rue-private-divider" />
-
-    {/* Coaching options heading */}
-    <h3 className="rue-private-options-heading">
-      Private Coaching Options
-    </h3>
-
-    {/* Three coaching options */}
-    <div className="rue-private-options">
-
-      <div className="rue-private-option">
-      <ScrollReveal animation="fade-up" delay={0}>
-
-        <h4>Self-Discovery</h4>
-
-        <p>
-          For young people who are still figuring out
-          who they are and what might suit them.
-        </p>
-{/*
-        <a
-          href="https://ruecoaching.com/shop/self_discovery_package"
-          className="rue-private-link"
-        >
-          Learn More
-        </a>
-        */}
-        <a href="#" className="rue-private-link">
-  Learn More
-</a>
-        </ScrollReveal>
-      </div>
-
-      <div className="rue-private-option">
-      <ScrollReveal animation="fade-up" delay={120}>
-        <h4>Ready for a Change</h4>
-
-        <p>
-          For young people who already have a few ideas
-          but are unsure which direction makes the most sense.
-        </p>
-{/*
-        <a
-          href="https://ruecoaching.com/shop/ready_for_a_change"
-          className="rue-private-link"
-        >
-          Learn More
-        </a>
-        */}
-
-        <a href="#" className="rue-private-link">
-  Learn More
-</a>
-        </ScrollReveal>
-      </div>
-
-      <div className="rue-private-option">
-      <ScrollReveal animation="fade-up" delay={240}>
-        <h4>Make Your Move</h4>
-
-        <p>
-          For young people who want to go beyond choosing
-          a career and start building toward one.
-        </p>
-{/*
-        <a
-          href="https://ruecoaching.com/shop/make_your_move"
-          className="rue-private-link"
-        >
-          Learn More
-        </a>
-
-        */}
-
-        <a href="#" className="rue-private-link">
-  Learn More
-</a>
-        </ScrollReveal>
-      </div>
-
-    </div>
-  </div>
-</section>
+<PrivateCoaching/>
 
 
    
 {/* KEEP GOING SECTION */}
-<section className="rue-keep-going">
-  <div className="rue-keep-going-container">
+<KeepGoingSection/>
 
-    <h2>Keep Going</h2>
+{/* Not SURE SECTION */}
+<NotSureSection/>
 
-    <div className="rue-keep-going-content">
-      <p>
-        For young people who benefit from having someone to
-        check in with as their interests, choices, and goals develop.
-      </p>
-
-      <p>
-        Periodic conversations provide space to review progress,
-        work through new decisions, reflect on goals and continue
-        exploring what comes next.
-      </p>
-    </div>
-
-
-  {/*
-    <a
-      href="https://ruecoaching.com/shop/free_discovery_call"
-      className="rue-keep-going-link"
-    >
-      See more
-    </a>
-
-    */}
-
-    <a href="#" className="rue-keep-going-link">
-  See More
-</a>
-
-  </div>
-</section>
-
-
-<section className="rue-not-sure">
-  <div className="rue-not-sure-container">
-  <ScrollReveal animation="fade-left">
-    <h2>Not sure where to start?</h2>
-
-    <div className="rue-not-sure-text">
-      <p>
-        Tell us a little about the young person, what they are trying to
-        figure out and what kind of support you are looking for.
-      </p>
-
-      <p>
-        We can help you decide whether private coaching, mentorship,
-        a workshop or another RueCoaching activity makes the most sense.
-      </p>
-    </div>
-    </ScrollReveal>
-  </div>
-</section>
+{/* CONTACT US SECTION */}
 
 <section className="rue-contact">
   <div className="rue-contact-overlay"></div>
@@ -832,85 +382,10 @@ return (
 
       
 {/* RUECOACHING FOOTER */}
-<footer className="rue-footer">
-  <div className="rue-footer-container">
-
-    {/* Social media icons */}
-    <div className="rue-footer-socials">
-      <a
-        href="https://www.linkedin.com/in/ruthmwongelimuthoka/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <Linkedin />
-      </a>
-
-      <a
-        href="#"
-        aria-label="More links"
-      >
-        <Bookmark />
-      </a>
-
-      <a
-        href="https://instagram.com/ruthmwongeli"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <Instagram />
-      </a>
-
-      <a
-        href="https://www.facebook.com/ruth.mwongeli.1"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook"
-      >
-        <Facebook />
-      </a>
-    </div>
-
-    {/* Copyright */}
-    <p className="rue-footer-copyright">
-  © {new Date().getFullYear()} All Rights Reserved
-</p>
-
-{/* Developer Credit */}
-<p className="rue-footer-credit">
-  Developed by{" "}
-  <a
-    href="https://letytechconsultancy.co.ke/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    LetyTech Consultancy
-  </a>
-</p>
-
-  
-
-  </div>
-</footer>
+<FooterSection/>
 
 {/* BACK TO TOP BUTTON */}
-{showScrollTop && (
-<button
-  type="button"
-  className="rue-scroll-top"
-  onClick={() =>
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
-  }
-  aria-label="Back to top"
-  title="Back to top"
->
-  <ArrowUp size={24} />
-</button>
-)}
+<BackToTop/>
 
     </main>
   );
