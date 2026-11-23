@@ -57,9 +57,11 @@ export const Route = createFileRoute("/")({
         name: "robots",
         content: "index, follow",
       },
+     
+
       {
         property: "og:title",
-        content: "RueCoaching ",
+        content: "RueCoaching | Career Guidance & Mentorship for Young People",
       },
       {
         property: "og:description",
