@@ -21,7 +21,7 @@ import BackToTop from "@/components/BackToTop";
 
 const RUTH_IMG =
   "https://cdn.beacons.ai/user_content/JxroMmCoXLaA9O3WtmUClyUgrd82/referenced_images/d752c8fb-7e24-49cf-b30d-fb673c054bfd__website__92d33d80-fb58-4be1-bfc7-957b452329df__content__homepage__a3f7e9c4-4c46-4850-9c3a-0aac4fdcbbe2__819dfc35-6bc6-4170-9dfd-85b1136cf80a.webp?t=1761046154229";
-const BOOK = "https://ruecoaching.com/shop/free_discovery_call";
+const BOOK = "https://ruecoaching.org/shop/free_discovery_call";
 
 
 
@@ -30,7 +30,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "RueCoaching",
-  url: "https://ruecoaching.com/",
+  url: "https://www.ruecoaching.org/",
   description:
     "A youth development initiative focused on career exploration, mentorship, coaching and capacity building.",
   sameAs: [
@@ -72,7 +72,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:url",
-        content: "https://ruecoaching.com/",
+        content: "https://www.ruecoaching.org/",
       },
       {
         property: "og:image",
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/")({
     links: [
       {
         rel: "canonical",
-        href: "https://ruecoaching.com/",
+        href: "https://www.ruecoaching.org/",
       },
     ],
 
@@ -153,9 +153,9 @@ const H = ({ children }: { children: React.ReactNode }) => (
 );
 
 const options = [
-  { t: "Self-Discovery", d: "For young people who are still figuring out who they are and what might suit them.", href: "https://ruecoaching.com/shop/self_discovery_package" },
-  { t: "Ready for a Change", d: "For young people who already have a few ideas but are unsure which direction makes the most sense.", href: "https://ruecoaching.com/shop/ready_for_a_change" },
-  { t: "Make Your Move", d: "For young people who want to go beyond choosing a career and start building toward one.", href: "https://ruecoaching.com/shop/make_your_move" },
+  { t: "Self-Discovery", d: "For young people who are still figuring out who they are and what might suit them.", href: "https://ruecoaching.org/shop/self_discovery_package" },
+  { t: "Ready for a Change", d: "For young people who already have a few ideas but are unsure which direction makes the most sense.", href: "https://ruecoaching.org/shop/ready_for_a_change" },
+  { t: "Make Your Move", d: "For young people who want to go beyond choosing a career and start building toward one.", href: "https://ruecoaching.org/shop/make_your_move" },
   { t: "Keep Going", d: "For young people who benefit from having someone to check in with as their interests, choices, and goals develop. Periodic conversations provide space to review progress, work through new decisions, reflect on goals and continue exploring what comes next.", href: BOOK },
 ];
 
