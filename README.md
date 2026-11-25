@@ -82,7 +82,7 @@ The application requires hosting that supports TanStack Start server functions f
 
 ## Contact
 
-For information about career exploration, mentorship, coaching, and workshops, visit [RueCoaching](https://ruecoaching.com/).
+For information about career exploration, mentorship, coaching, and workshops, visit [RueCoaching](https://ruecoaching.org/).
 
 ## Website Development
 
