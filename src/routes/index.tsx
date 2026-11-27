@@ -21,7 +21,7 @@ import BackToTop from "@/components/BackToTop";
 
 const RUTH_IMG =
   "https://cdn.beacons.ai/user_content/JxroMmCoXLaA9O3WtmUClyUgrd82/referenced_images/d752c8fb-7e24-49cf-b30d-fb673c054bfd__website__92d33d80-fb58-4be1-bfc7-957b452329df__content__homepage__a3f7e9c4-4c46-4850-9c3a-0aac4fdcbbe2__819dfc35-6bc6-4170-9dfd-85b1136cf80a.webp?t=1761046154229";
-const BOOK = "https://ruecoaching.org/shop/free_discovery_call";
+const BOOK = "https://www.ruecoaching.org/shop/free_discovery_call";
 
 
 

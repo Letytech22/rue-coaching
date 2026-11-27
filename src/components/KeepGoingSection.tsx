@@ -24,7 +24,7 @@ export default function KeepGoingSection (){
 
   {/*
     <a
-      href="https://ruecoaching.com/shop/free_discovery_call"
+      href="https://ruecoaching.org/shop/free_discovery_call"
       className="rue-keep-going-link"
     >
       See more
